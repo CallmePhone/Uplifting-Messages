@@ -6,13 +6,14 @@
     --rose4: #011526;
 }
 
+
+
 body {
     background: var(--bg);
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     background: var(--bg);
@@ -20,13 +21,13 @@ html, body {
 }
 
 .container {
-    width: 80vw;
-    height: auto;
+    width: 800px;
+    height: 400px;
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.6);
+    left: 85%; /* Adjusted to move right */
+    transform: translate(-50%, -50%) scale(0.6); /* Center and scale */
 }
 
 .container div {
@@ -34,60 +35,63 @@ html, body {
 }
 
 .container .glass {
-    height: auto;
-    width: 30vw;
+    height: 420px;
+    width: 250px;
     border: 3px solid #011526;
     border-radius: 300px 300px 0 0;
-    left: -10%;
-    top: -20%;
+    left: -80px;
+    top: -100px;
     border-bottom: 15px solid #011526;
 }
 
-.container .glass::after, .container .glass::before {
+.container .glass::after {
     width: 8px;
     background: rgba(255, 255, 255, 0.28);
     content: "";
     position: absolute;
-    border-radius: 100px;
-}
-
-.container .glass::after {
     height: 80px;
-    top: 30%;
+    top: 180px;
+    border-radius: 100px;
     left: 10px;
 }
 
 .container .glass::before {
+    width: 8px;
+    background: rgba(255, 255, 255, 0.28);
+    content: "";
+    position: absolute;
     height: 15px;
-    top: 60%;
+    top: 280px;
+    border-radius: 100px;
     left: 10px;
 }
 
 .container .glow {
     position: absolute;
-    width: 20vw;
-    height: 20vw;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     border: 1px solid #143840;
     box-shadow: 0 0 10px #143840;
-    left: -5vw;
-    top: -5vw;
+    left: -40px;
+    top: -40px;
     transition: all 0.5s ease;
     animation: glowing 2.5s ease-in-out infinite;
 }
 
 .container .rose-petals > div {
     background: var(--rose1);
-    width: 10vw;
-    height: 15vw;
+    width: 45px;
+    height: 80px;
     position: absolute;
     transition: all 0.5s ease-out;
 }
 
 .container .rose-petals > div:nth-child(1) {
     border-radius: 15px;
-    left: 5vw;
-    top: -2vw;
+    left: 20px;
+    top: -6px;
+    background: var(--rose1);
 }
 
 .container .rose-petals > div:nth-child(2),
@@ -103,20 +107,20 @@ html, body {
 .container .rose-petals > div:nth-child(5),
 .container .rose-petals > div:nth-child(7) {
     border-radius: 30px 0 30px 0;
-    left: 20vw;
+    left: 40px;
     transform-origin: bottom left;
 }
 
 @keyframes openRose2 {
     50% {
         transform: rotate(-90deg);
-        top: 30%;
-        left: 25%;
+        top: 80px;
+        left: 100px;
     }
     100% {
         transform: rotate(-60deg);
-        top: 50%;
-        left: -10%;
+        top: 210px;
+        left: -30px;
     }
 }
 
@@ -149,7 +153,7 @@ html, body {
         opacity: 1;
     }
     100% {
-        bottom: 10vw;
+        bottom: 250px;
     }
 }
 
@@ -158,8 +162,8 @@ html, body {
     animation-fill-mode: forwards;
     z-index: 5;
     background: var(--rose2);
-    top: 1vw;
-    height: 14vw;
+    top: 10px;
+    height: 70px;
     animation-delay: 2s;
 }
 
@@ -168,8 +172,8 @@ html, body {
     animation-fill-mode: forwards;
     z-index: 4;
     background: var(--rose2);
-    top: 1vw;
-    height: 14vw;
+    top: 10px;
+    height: 70px;
     animation-delay: 2s;
 }
 
@@ -178,8 +182,8 @@ html, body {
     animation-fill-mode: forwards;
     z-index: 3;
     background: var(--rose3);
-    top: 0;
-    height: 15vw;
+    top: 5px;
+    height: 75px;
     animation-delay: 2s;
 }
 
@@ -188,88 +192,96 @@ html, body {
     animation-fill-mode: forwards;
     z-index: 2;
     background: var(--rose3);
-    top: 0;
-    height: 15vw;
+    top: 5px;
+    height: 75px;
     animation-delay: 2s;
 }
 
-.container .rose-petals > div:nth-child(6),
-.container .rose-petals > div:nth-child(7),
+.container .rose-petals > div:nth-child(6) {
+    background: var(--rose4);
+}
+
+.container .rose-petals > div:nth-child(7) {
+    background: var(--rose4);
+}
+
 .container .rose-petals > div:nth-child(8) {
     background: var(--rose4);
 }
 
 .container .rose-leaves > div:nth-last-child(1) {
-    width: 15vw;
-    height: 7vw;
+    width: 55px;
+    height: 30px;
     background: #338f37;
     position: absolute;
-    top: 15%;
-    left: 5%;
+    top: 60px;
+    left: 15px;
     border-radius: 100px;
 }
 
 .container .rose-leaves > div:nth-child(1) {
-    width: 2vw;
-    height: 40vw;
+    width: 6px;
+    height: 230px;
     border: none;
-    top: 20%;
+    top: 80px;
     background: #066406;
-    left: 10%;
+    left: 40px;
 }
 
 .container .thorns > div {
-    width: 10vw;
-    height: 10vw;
+    width: 30px;
+    height: 30px;
     background: #066406;
-    top: 20%;
-    left: 5%;
+    top: 100px;
+    left: 10px;
 }
 
-.container .thorns > div::after,
-.container .thorns > div::before {
-    width: 15vw;
-    height: 10vw;
+.container .thorns > div::after {
+    width: 41px;
+    height: 31px;
     border-radius: 100%;
     background: #122139;
     content: "";
     position: absolute;
-}
-
-.container .thorns > div::after {
-    left: -3vw;
-    top: 5vw;
+    left: -12px;
+    top: 17px;
 }
 
 .container .thorns > div::before {
-    left: -2vw;
-    top: -2vw;
+    width: 41px;
+    height: 31px;
+    border-radius: 100%;
+    background: #122139;
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: -11px;
     z-index: 0;
 }
 
 .container .thorns > div:nth-child(2) {
-    top: 25%;
+    top: 150px;
     transform: rotate(180deg);
-    left: 15%;
+    left: 45px;
 }
 
 .container .thorns > div:nth-child(3) {
-    top: 30%;
+    top: 180px;
 }
 
 .container .thorns > div:nth-child(4) {
-    top: 35%;
+    top: 220px;
     transform: rotate(180deg);
-    left: 15%;
+    left: 45px;
 }
 
 .container .sparkles {
-    bottom: -10vw;
+    bottom: -40px;
 }
 
 .container .sparkles > div {
-    width: 1vw;
-    height: 1vw;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: #011526;
     box-shadow: 0 0 12px 2px #011526;
@@ -279,21 +291,30 @@ html, body {
 }
 
 .container .sparkles > div:nth-child(1) {
-    left: 10%;
+    left: 38px;
     animation-delay: 2s;
 }
 
 .container .sparkles > div:nth-child(2) {
-    left: 5%;
+    left: 22px;
     animation-delay: 1s;
 }
 
-.letter {
-    width: 80vw;
-    height: auto;
+/* Additional sparkles with random positions and delays */
+.letter{
+    width: 600px;
+    height: 400px;
     display: inline-block;
+    width: 800px;
+    height: 400px;
     position: absolute;
     top: 60%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    color: black;
+    font-size: 20px;
 }
