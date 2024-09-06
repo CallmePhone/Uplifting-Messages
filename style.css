@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 
 :root {
     --bg: #F2E2C4;
@@ -10,26 +11,26 @@
 
 body {
     background: var(--bg);
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: var(--bg);
     overflow: hidden;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
 .container {
+    width: 800px;
+    height: 400px;
+    margin: auto;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 85%;
+    /* Adjusted to move right */
     transform: translate(-50%, -50%) scale(0.6);
-    width: 80vw;
-    max-width: 800px;
-    height: auto;
-    max-height: 400px;
+    /* Center and scale */
 }
 
 .container div {
@@ -37,93 +38,93 @@ html, body {
 }
 
 .container .glass {
-    height: 50%;
-    width: 30%;
-    max-width: 250px;
+    height: 420px;
+    width: 250px;
     border: 3px solid #011526;
     border-radius: 300px 300px 0 0;
+    left: -80px;
+    top: -100px;
     border-bottom: 15px solid #011526;
-    left: 10%;
-    top: -20%;
 }
 
-.container .glass::after, .container .glass::before {
+.container .glass::after {
     width: 8px;
     background: rgba(255, 255, 255, 0.28);
     content: "";
     position: absolute;
-    border-radius: 100px;
-}
-
-.container .glass::after {
     height: 80px;
-    top: 60%;
+    top: 180px;
+    border-radius: 100px;
     left: 10px;
 }
 
 .container .glass::before {
+    width: 8px;
+    background: rgba(255, 255, 255, 0.28);
+    content: "";
+    position: absolute;
     height: 15px;
-    top: 70%;
+    top: 280px;
+    border-radius: 100px;
     left: 10px;
 }
 
 .container .glow {
     position: absolute;
-    width: 20vw;
-    height: 20vw;
-    max-width: 170px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     border: 1px solid #143840;
     box-shadow: 0 0 10px #143840;
-    left: 15%;
-    top: -10%;
+    left: -40px;
+    top: -40px;
     transition: all 0.5s ease;
     animation: glowing 2.5s ease-in-out infinite;
 }
 
-.container .rose-petals > div {
+.container .rose-petals>div {
     background: var(--rose1);
-    width: 10vw;
-    height: 15vw;
-    max-width: 45px;
-    max-height: 80px;
+    width: 45px;
+    height: 80px;
     position: absolute;
     transition: all 0.5s ease-out;
 }
 
-.container .rose-petals > div:nth-child(1) {
+.container .rose-petals>div:nth-child(1) {
     border-radius: 15px;
-    left: 5%;
-    top: -5%;
+    left: 20px;
+    top: -6px;
+    background: var(--rose1);
 }
 
-.container .rose-petals > div:nth-child(2),
-.container .rose-petals > div:nth-child(4),
-.container .rose-petals > div:nth-child(6) {
+.container .rose-petals>div:nth-child(2),
+.container .rose-petals>div:nth-child(4),
+.container .rose-petals>div:nth-child(6) {
     border-radius: 0 30px 0 30px;
     background: var(--rose3);
     left: 0;
     transform-origin: bottom right;
 }
 
-.container .rose-petals > div:nth-child(3),
-.container .rose-petals > div:nth-child(5),
-.container .rose-petals > div:nth-child(7) {
+.container .rose-petals>div:nth-child(3),
+.container .rose-petals>div:nth-child(5),
+.container .rose-petals>div:nth-child(7) {
     border-radius: 30px 0 30px 0;
-    left: 20%;
+    left: 40px;
     transform-origin: bottom left;
 }
 
 @keyframes openRose2 {
     50% {
         transform: rotate(-90deg);
-        top: 15%;
-        left: 25%;
+        top: 80px;
+        left: 100px;
     }
+
     100% {
         transform: rotate(-60deg);
-        top: 35%;
-        left: -10%;
+        top: 210px;
+        left: -30px;
     }
 }
 
@@ -155,231 +156,170 @@ html, body {
     50% {
         opacity: 1;
     }
+
     100% {
-        bottom: 25%;
+        bottom: 250px;
     }
 }
 
-.container .rose-petals > div:nth-child(2) {
+.container .rose-petals>div:nth-child(2) {
     animation: openRose2 3s ease-in-out;
     animation-fill-mode: forwards;
     z-index: 5;
     background: var(--rose2);
-    top: 5%;
-    height: 15vw;
+    top: 10px;
+    height: 70px;
     animation-delay: 2s;
 }
 
-.container .rose-petals > div:nth-child(3) {
+.container .rose-petals>div:nth-child(3) {
     animation: openRose3 3s ease-in-out;
     animation-fill-mode: forwards;
     z-index: 4;
     background: var(--rose2);
-    top: 5%;
-    height: 15vw;
+    top: 10px;
+    height: 70px;
     animation-delay: 2s;
 }
 
-.container .rose-petals > div:nth-child(4) {
+.container .rose-petals>div:nth-child(4) {
     animation: openRose4 3s ease-in-out;
     animation-fill-mode: forwards;
     z-index: 3;
     background: var(--rose3);
-    top: 0;
-    height: 20vw;
+    top: 5px;
+    height: 75px;
     animation-delay: 2s;
 }
 
-.container .rose-petals > div:nth-child(5) {
+.container .rose-petals>div:nth-child(5) {
     animation: openRose5 3s ease-in-out;
     animation-fill-mode: forwards;
     z-index: 2;
     background: var(--rose3);
-    top: 0;
-    height: 20vw;
+    top: 5px;
+    height: 75px;
     animation-delay: 2s;
 }
 
-.container .rose-petals > div:nth-child(6),
-.container .rose-petals > div:nth-child(7),
-.container .rose-petals > div:nth-child(8) {
+.container .rose-petals>div:nth-child(6) {
     background: var(--rose4);
 }
 
-.container .rose-leaves > div:nth-last-child(1) {
-    width: 10vw;
-    height: 5vw;
-    max-width: 55px;
-    max-height: 30px;
+.container .rose-petals>div:nth-child(7) {
+    background: var(--rose4);
+}
+
+.container .rose-petals>div:nth-child(8) {
+    background: var(--rose4);
+}
+
+.container .rose-leaves>div:nth-last-child(1) {
+    width: 55px;
+    height: 30px;
     background: #338f37;
     position: absolute;
-    top: 10%;
-    left: 5%;
+    top: 60px;
+    left: 15px;
     border-radius: 100px;
 }
 
-.container .rose-leaves > div:nth-child(1) {
-    width: 2vw;
-    height: 30vw;
+.container .rose-leaves>div:nth-child(1) {
+    width: 6px;
+    height: 230px;
     border: none;
-    top: 15%;
+    top: 80px;
     background: #066406;
-    left: 8%;
+    left: 40px;
 }
 
-.container .thorns > div {
-    width: 10vw;
-    height: 10vw;
-    max-width: 30px;
-    max-height: 30px;
+.container .thorns>div {
+    width: 30px;
+    height: 30px;
     background: #066406;
-    top: 20%;
-    left: 5%;
+    top: 100px;
+    left: 10px;
 }
 
-.container .thorns > div::after, .container .thorns > div::before {
-    width: 15vw;
-    height: 10vw;
+.container .thorns>div::after {
+    width: 41px;
+    height: 31px;
     border-radius: 100%;
     background: #122139;
     content: "";
     position: absolute;
+    left: -12px;
+    top: 17px;
 }
 
-.container .thorns > div::after {
-    left: -3vw;
-    top: 5vw;
-}
-
-.container .thorns > div::before {
-    left: -2vw;
-    top: -2vw;
+.container .thorns>div::before {
+    width: 41px;
+    height: 31px;
+    border-radius: 100%;
+    background: #122139;
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: -11px;
     z-index: 0;
 }
 
-.container .thorns > div:nth-child(2) {
-    top: 25%;
+.container .thorns>div:nth-child(2) {
+    top: 150px;
     transform: rotate(180deg);
-    left: 15%;
+    left: 45px;
 }
 
-.container .thorns > div:nth-child(3) {
-    top: 30%;
+.container .thorns>div:nth-child(3) {
+    top: 180px;
 }
 
-.container .thorns > div:nth-child(4) {
-    top: 35%;
+.container .thorns>div:nth-child(4) {
+    top: 220px;
     transform: rotate(180deg);
-    left: 15%;
+    left: 45px;
 }
 
 .container .sparkles {
-    position: absolute;
-    bottom: -10%;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: -40px;
 }
 
-.container .sparkles > div {
-    width: 2px;
-    height: 2px;
+.container .sparkles>div {
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: #011526;
     box-shadow: 0 0 12px 2px #011526;
+    bottom: 0;
     opacity: 0;
     animation: sparkle 4s ease-in-out infinite;
 }
 
-.container .sparkles > div:nth-child(1) {
-    left: 20%;
+.container .sparkles>div:nth-child(1) {
+    left: 38px;
     animation-delay: 2s;
 }
 
-.container .sparkles > div:nth-child(2) {
-    left: 10%;
+.container .sparkles>div:nth-child(2) {
+    left: 22px;
     animation-delay: 1s;
 }
 
+/* Additional sparkles with random positions and delays */
 .letter {
-    width: 80vw;
-    max-width: 800px;
-    height: auto;
-    max-height: 400px;
+    width: 600px;
+    height: 400px;
+    display: inline-block;
+    width: 800px;
+    height: 400px;
     position: absolute;
     top: 60%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
     color: black;
-    font-size: 5vw;
-    text-align: center;
-    margin: 0;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 1200px) {
-    .container {
-        width: 90vw;
-        transform: translate(-50%, -50%) scale(0.7);
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        width: 95vw;
-        transform: translate(-50%, -50%) scale(0.6);
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 100vw;
-        transform: translate(-50%, -50%) scale(0.5);
-    }
-
-    .container .glass {
-        height: 40%;
-        width: 25%;
-        left: 0;
-        top: -10%;
-    }
-
-    .container .glow {
-        width: 15vw;
-        height: 15vw;
-        left: 10%;
-        top: -10%;
-    }
-    
-    h1 {
-        font-size: 6vw;
-    }
-}
-
-@media (max-width: 576px) {
-    .container {
-        width: 100vw;
-        transform: translate(-50%, -50%) scale(0.4);
-    }
-
-    .container .glass {
-        height: 35%;
-        width: 20%;
-        left: 5%;
-        top: -5%;
-    }
-
-    .container .glow {
-        width: 20vw;
-        height: 20vw;
-        left: 5%;
-        top: -5%;
-    }
-
-    h1 {
-        font-size: 8vw;
-    }
+    font-size: 20px;
 }
