@@ -8,19 +8,18 @@
 
 body {
     background: var(--bg);
+    margin: 0; /* Ensure no margin */
+    overflow: hidden;
+    font-family: Arial, sans-serif; /* Default font for body */
 }
 
-html,
-body {
+html, body {
     height: 100%;
     width: 100%;
-    background: var(--bg);
-    overflow: hidden;
-    margin: 0; /* Ensure no margin */
 }
 
 .container {
-    width: 80vw; /* Make width responsive */
+    width: 80vw; /* Responsive width */
     height: auto;
     max-width: 800px;
     max-height: 400px;
@@ -28,7 +27,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%);
 }
 
 .container div {
@@ -41,31 +40,30 @@ body {
     max-width: 250px;
     border: 3px solid #011526;
     border-radius: 300px 300px 0 0;
-    left: -10%;
-    top: -20%;
     border-bottom: 15px solid #011526;
+    left: calc(50% - 15vw); /* Center the glass */
+    top: calc(-10% - 5vw); /* Adjust position */
 }
 
-.container .glass::after {
-    width: 8px;
-    background: rgba(255, 255, 255, 0.28);
-    content: "";
-    position: absolute;
-    height: 80px;
-    top: 30%;
-    left: 10px;
-    border-radius: 100px;
-}
-
+.container .glass::after,
 .container .glass::before {
     width: 8px;
     background: rgba(255, 255, 255, 0.28);
     content: "";
     position: absolute;
+    border-radius: 100px;
+}
+
+.container .glass::after {
+    height: 80px;
+    top: 30%;
+    left: 10px;
+}
+
+.container .glass::before {
     height: 15px;
     top: 60%;
     left: 10px;
-    border-radius: 100px;
 }
 
 .container .glow {
@@ -77,9 +75,8 @@ body {
     border-radius: 50%;
     border: 1px solid #143840;
     box-shadow: 0 0 10px #143840;
-    left: -5vw;
-    top: -5vw;
-    transition: all 0.5s ease;
+    left: calc(50% - 10vw);
+    top: calc(-10vw);
     animation: glowing 2.5s ease-in-out infinite;
 }
 
@@ -97,7 +94,6 @@ body {
     border-radius: 15px;
     left: 5vw;
     top: -2vw;
-    background: var(--rose1);
 }
 
 .container .rose-petals > div:nth-child(2),
@@ -315,62 +311,45 @@ h1 {
     color: black;
     font-size: 5vw;
     text-align: center;
-    margin: 0; /* Ensure no margin */
+    margin: 0;
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 1200px) {
     .container {
-        transform: translate(-50%, -50%) scale(0.7);
+        width: 70vw; /* Adjust container size */
+        transform: translate(-50%, -50%) scale(0.8);
     }
 }
 
 @media (max-width: 992px) {
     .container {
-        transform: translate(-50%, -50%) scale(0.8);
+        width: 60vw;
+        transform: translate(-50%, -50%) scale(0.9);
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        transform: translate(-50%, -50%) scale(0.9);
         width: 90vw;
-        height: auto;
+        transform: translate(-50%, -50%) scale(0.7);
     }
 
     .container .glass,
     .container .glow {
         width: 40vw;
-        height: auto;
-    }
-
-    .container .rose-petals > div {
-        width: 15vw;
-        height: 25vw;
-    }
-
-    .container .rose-leaves > div:nth-last-child(1) {
-        width: 20vw;
-        height: 10vw;
-    }
-
-    .container .thorns > div {
-        width: 15vw;
-        height: 15vw;
     }
 }
 
 @media (max-width: 576px) {
     .container {
-        transform: translate(-50%, -50%) scale(1);
         width: 100vw;
-        height: auto;
+        transform: translate(-50%, -50%) scale(1);
     }
 
     .container .glass,
     .container .glow {
         width: 50vw;
-        height: auto;
     }
 
     .container .rose-petals > div {
@@ -386,5 +365,9 @@ h1 {
     .container .thorns > div {
         width: 20vw;
         height: 20vw;
+    }
+
+    h1 {
+        font-size: 6vw;
     }
 }
